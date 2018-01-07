@@ -22,15 +22,25 @@ $(function () {
     main.loadLine = function () {
         $('.page1').show();
         $('.page2').show();
+        // window.addEventListener('touchstart', function(){
+        //     introVideo.load();
+        //     introVideo.play();
+        // }, false);
         var wid = 0;
         main.timer = setInterval(function () {
             if (wid >= 170) {
                 clearInterval(main.timer);
-                main.page2();
+                // main.page2();
             }
             $('.load-line-inner').width(wid);
             wid++
         }, 40)
+        var introVideo = $('#start-video')[0];
+        $(document).on('click', function(){
+            introVideo.load();
+            introVideo.play();
+            main.page2();
+        })
     }
     main.page2 = function () {
         $('.page1').hide();
@@ -39,24 +49,12 @@ $(function () {
             $('#start-video-jump').fadeIn();
         }, 2000)
         var introVideo = $('#start-video')[0];
-        var playVideo = true;
-        introVideo.addEventListener('timeupdate', function(){
-            console.log(123321);
-        })
-        introVideo.addEventListener('canplay', function () {
-            console.log('can play');
-            if (playVideo) {
-                console.log(1);
-                introVideo.play();
-            }
-        });
         introVideo.addEventListener("ended", function () {
             $('.page2').hide();
             main.page3();
         })
         $(document).on('click', '#start-video-jump', function () {
             introVideo.pause();
-            playVideo = false;
             $('.page2').hide();
             main.page3();
         })
