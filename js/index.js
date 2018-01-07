@@ -35,6 +35,12 @@ main.page2 = function () {
         $('#start-video-jump').fadeIn();
     }, 2000)
     var introVideo = $('#start-video')[0];
+    var playVideo = true;
+    introVideo.addEventListener('canplaythrough',function(){
+        if(playVideo) {
+            introVideo.play();
+        }
+    });
     introVideo.play();
     introVideo.addEventListener("ended",function(){
         $('.page2').hide();
@@ -42,6 +48,7 @@ main.page2 = function () {
     })
     $(document).on('click', '#start-video-jump', function () {
         introVideo.pause();
+        playVideo = false;
         $('.page2').hide();
         main.page3();
     })
