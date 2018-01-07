@@ -1,8 +1,9 @@
 $(function () {
     var main = {};
     main.init = function () {
-        // main.initSwipper();
-        // main.page3();
+        if(document && document.getElementById && document.getElementsByTagName) {
+            console.log(1);
+        }
         main.loadLine();
     }
     main.initSwipper = function () {
@@ -19,6 +20,8 @@ $(function () {
         })
     }
     main.loadLine = function () {
+        $('.page1').show();
+        $('.page2').show();
         var wid = 0;
         main.timer = setInterval(function () {
             if (wid >= 170) {
