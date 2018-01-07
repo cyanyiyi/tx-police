@@ -288,6 +288,7 @@ div {
 
 .page1 {
     background: #ecf1f5;
+    z-index: 1000;
 }
 .load-line-wrapper {
     width: 4.91rem;
