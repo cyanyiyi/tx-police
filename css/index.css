@@ -292,7 +292,7 @@ div {
 }
 .load-line-wrapper {
     width: 4.91rem;
-    height: 2rem;
+    height: 3rem;
 }
 .load-line-title {
     width: 4.91rem;
@@ -312,6 +312,9 @@ div {
     width: 1px;
     height: 4px;
     background: #1473fb;
+}
+.try-now {
+    font-size: 16px;
 }
 
 .page1 .loader-inner {
