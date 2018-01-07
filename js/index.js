@@ -47,7 +47,6 @@ $(function () {
                 introVideo.play();
             }
         });
-        // introVideo.play();
         introVideo.addEventListener("ended", function () {
             $('.page2').hide();
             main.page3();
@@ -58,18 +57,23 @@ $(function () {
             $('.page2').hide();
             main.page3();
         })
+        introVideo.play();
     }
     main.page3 = function () {
         $('.page3').show();
         main.initSwipper();
-        // main.mainSwiper.init();
+        $.each($('.video-full'), function(k, v){
+            v.addEventListener("ended", function () {
+                $(v).parent().hide();
+            })
+        })
         $(document).on('click', '.video-pic', function () {
             var index = $(this).index('.video-pic');
             $('.video-full-container').eq(index).show().find('.video-full')[0].play();
-            $(document).on('click', '.video-close', function () {
-                $(this).siblings('.video-full')[0].pause();
-                $(this).parent().hide();
-            })
+        })
+        $(document).on('click', '.video-close', function () {
+            $(this).siblings('.video-full')[0].pause();
+            $(this).parent().hide();
         })
         $(document).on('click', '.slide3-line-btn', function () {
             window.location.href = 'https://cloud.tencent.com/act/event/wx-video.html'
