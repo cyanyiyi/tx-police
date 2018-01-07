@@ -2,7 +2,7 @@ $(function () {
     var main = {};
     main.init = function () {
         if(document && document.getElementById && document.getElementsByTagName) {
-            console.log(1);
+            console.log('document');
         }
         main.loadLine();
     }
@@ -40,8 +40,11 @@ $(function () {
         }, 2000)
         var introVideo = $('#start-video')[0];
         var playVideo = true;
+        introVideo.addEventListener('timeupdate', function(){
+            console.log(123321);
+        })
         introVideo.addEventListener('canplay', function () {
-            console.log(1);
+            console.log('can play');
             if (playVideo) {
                 console.log(1);
                 introVideo.play();
@@ -57,6 +60,7 @@ $(function () {
             $('.page2').hide();
             main.page3();
         })
+        introVideo.load();
         introVideo.play();
     }
     main.page3 = function () {
