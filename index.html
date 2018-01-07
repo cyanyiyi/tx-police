@@ -1,0 +1,178 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>110报警</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" href="./css/index.css">
+    <script>
+        window.onload = function () {
+            getRem(750, 100)
+        };
+        window.onresize = function () {
+            getRem(750, 100)
+        };
+
+        function getRem(pwidth, prem) {
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+            console.log(oWidth);
+            if (oWidth >= 640) {
+                oWidth = 640;
+            }
+            html.style.fontSize = oWidth / pwidth * prem + "px";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page page1" style="display: block">
+        <div class="load-line-wrapper ab-c-w">
+            <div class="load-line-title">
+                <img src="./img/intro-text.png" alt="" class="w100">
+            </div>
+            <div class="load-line">
+                <div class="load-line-inner"></div>
+            </div>
+        </div>
+        <!-- <div class="loader-inner ab-c-w">
+            <div class="fl">音视频连线中</div>
+            <div class="ball-ellipsis-wrapper fl">
+                <div class="ball-ellipsis fl">X</div>
+                <div class="ball-ellipsis fl"></div>
+                <div class="ball-ellipsis fl"></div>
+                <div class="ball-ellipsis fl"></div>
+                <div class="ball-ellipsis fl"></div>
+                <div class="ball-ellipsis fl"></div>
+            </div>
+        </div> -->
+    </div>
+    <div class="page page2" style="display: none">
+        <video id="start-video" class="video-full" playsinline src="./video/trail.mp4"></video>
+        <div id="start-video-jump" class="video-jump" style="display: none">跳过</div>
+        <!-- <div class="video-close">关闭</div> -->
+    </div>
+    <div class="page page3" style="display: none">
+        <div class="swiper-container swiper-container-main">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="display: block">
+                    <div class="slide1">
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="display: block">
+                    <div class="slide2">
+                        <!-- <div class="slide2-title"></div>
+                        <div class="slide2-video-con">
+                            <div class="video-wrapper mr15">
+                                <div class="video-box ab-c-w">
+                                    <img src="./img/video-pic.png" alt="" class="video-pic w100">
+                                </div>
+                            </div>
+                            <div class="video-wrapper">
+                                <div class="video-box ab-c-w">
+                                    <img src="./img/video-pic.png" alt="" class="video-pic w100">
+                                </div>
+                            </div>
+                            <div class="video-wrapper mr15">
+                                <div class="video-box ab-c-w">
+                                    <img src="./img/video-pic.png" alt="" class="video-pic w100">
+                                </div>
+                            </div>
+                            <div class="video-wrapper">
+                                <div class="video-box ab-c-w">
+                                    <img src="./img/video-pic.png" alt="" class="video-pic w100">
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="slide2-video-wrapper ab-c-w">
+                            <div class="slide2-title"></div>
+                            <div class="slide2-video-con">
+                                <div class="video-wrapper fl">
+                                    <div class="video-box ab-c-w">
+                                        <img src="./img/slide2-video-pic1.png" alt="" class="video-pic w100">
+                                    </div>
+                                </div>
+                                <div class="video-wrapper fr">
+                                    <div class="video-box ab-c-w">
+                                        <img src="./img/slide2-video-pic2.png" alt="" class="video-pic w100">
+                                    </div>
+                                </div>
+                                <div class="video-wrapper fl">
+                                    <div class="video-box ab-c-w">
+                                        <img src="./img/slide2-video-pic3.png" alt="" class="video-pic w100">
+                                    </div>
+                                </div>
+                                <div class="video-wrapper fr">
+                                    <div class="video-box ab-c-w">
+                                        <img src="./img/slide2-video-pic4.png" alt="" class="video-pic w100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="arrow"></div>
+                        <div class="page video-full-container">
+                            <video class="video-full" controls playsinline src="./video/test1.mp4"></video>
+                            <div class="video-close">关闭</div>
+                        </div>
+                        <div class="page video-full-container">
+                            <video class="video-full" controls playsinline src="./video/test2.mp4"></video>
+                            <div class="video-close">关闭</div>
+                        </div>
+                        <div class="page video-full-container">
+                            <video class="video-full" controls playsinline src="./video/test3.mp4"></video>
+                            <div class="video-close">关闭</div>
+                        </div>
+                        <div class="page video-full-container">
+                            <video class="video-full" controls playsinline src="./video/test4.mp4"></video>
+                            <div class="video-close">关闭</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slide3" style="display: block">
+                    <div class="slide3">
+                        <div class="slide3-line-btn">获取实时音视频能力</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/fastclick.js"></script>
+<script src="./js/swiper-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="./js/index.js"></script>
+<script>
+    // $('.seevideo').click(function () {
+    //     $('.page1').hide();
+    //     $('.page2').show();
+    //     $('#video')[0].play();
+    // })
+    // $('.jump').click(function () {
+    //     $('#video')[0].pause();
+    //     $('.page2').hide();
+    //     $('.page3').css({
+    //         // 'opacity':1,
+    //         // 'z-index':20
+    //     }).show();
+    //     mainSwiper.init();
+    // })
+</script>
+
+</html>
