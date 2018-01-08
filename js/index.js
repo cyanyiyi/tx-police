@@ -1,4 +1,5 @@
 $(function () {
+    FastClick.attach(document.body);
     var main = {};
     main.init = function () {
         if(document && document.getElementById && document.getElementsByTagName) {
@@ -20,7 +21,7 @@ $(function () {
         })
     }
     main.loadLine = function () {
-        $('.page1').show();
+        $('.page1').css('opacity', 1).show();
         $('.page2').show();
         // window.addEventListener('touchstart', function(){
         //     introVideo.load();
@@ -34,7 +35,7 @@ $(function () {
             }
             $('.load-line-inner').width(wid);
             wid++
-        }, 40)
+        }, 25)
         // var introVideo = $('#start-video')[0];
         // $(document).on('click', function(){
         //     introVideo.load();

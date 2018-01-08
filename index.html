@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <div class="page page1" style="display: none">
+    <div class="page page1" style="display: block; opacity: 0;">
         <div class="load-line-wrapper ab-c-w">
             <div class="load-line-title">
                 <img src="./img/intro-text.png" alt="" class="w100">
@@ -59,7 +59,7 @@
         </div> -->
     </div>
     <div class="page page2" style="display: none">
-        <video id="start-video" class="video-full" preload="auto" controls playsinline src="http://7xj7xs.com1.z0.glb.clouddn.com/trail.mp4" type="video/mp4"></video>
+        <video id="start-video" class="video-full" preload="auto" controls playsinline webkit-playsinline src="http://7xj7xs.com1.z0.glb.clouddn.com/trail.mp4" type="video/mp4"></video>
         <div id="start-video-jump" class="video-jump" style="display: none">跳过</div>
         <img id="start-video-pic" src="./img/video-test.jpg" alt="" class="w100 ab-c-w" style="z-index: 10">
         <!-- <div class="video-close">关闭</div> -->
@@ -154,9 +154,9 @@
 <script src="./js/fastclick.js"></script>
 <script src="./js/swiper-3.3.1.min.js"></script>
 <script>
-    $(function () {
-        FastClick.attach(document.body);
-    });
+    // $(function () {
+    //     FastClick.attach(document.body);
+    // });
 </script>
 <script src="./js/index.js"></script>
 </html>
