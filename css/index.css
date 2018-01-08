@@ -324,7 +324,14 @@ div {
     background: #1473fb;
 }
 .try-now {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #1473fb;
     font-size: 16px;
+    margin: 20px auto 0;
+    display: none;
 }
 
 .page1 .loader-inner {
@@ -338,7 +345,7 @@ div {
 }
 
 /* loader1 */
-.page1 .ball-ellipsis-wrapper {
+/* .page1 .ball-ellipsis-wrapper {
     width: 48px;
     height: 6px;
     margin-top: 14px;
@@ -400,10 +407,7 @@ div {
     }
 }
 
-@-moz-keyframes fadeInOut
-/* Firefox */
-
-{
+@-moz-keyframes fadeInOut {
     0% {
         opacity: 0;
     }
@@ -418,10 +422,7 @@ div {
     }
 }
 
-@-webkit-keyframes fadeInOut
-/* Safari 和 Chrome */
-
-{
+@-webkit-keyframes fadeInOut {
     0% {
         opacity: 0;
     }
@@ -436,10 +437,7 @@ div {
     }
 }
 
-@-o-keyframes fadeInOut
-/* Opera */
-
-{
+@-o-keyframes fadeInOut {
     0% {
         opacity: 0;
     }
@@ -452,7 +450,7 @@ div {
     100% {
         opacity: 0;
     }
-}
+} */
 
 .page2 {
     background: #000;

@@ -26,7 +26,8 @@ $(function () {
         main.timer = setInterval(function () {
             if (wid >= 170) {
                 clearInterval(main.timer);
-                main.page2();
+                main.tryNow();
+                // main.page2();
             }
             $('.load-line-inner').width(wid);
             wid++
@@ -35,6 +36,15 @@ $(function () {
     main.page1 = function () {
         $('.page1').css('opacity', 1).show();
         $('.page2').show();
+    }
+    main.tryNow = function() {
+        $('.try-now').show();
+        var introVideo = $('#start-video')[0];
+        $(document).on('click', '.try-now', function(){
+            introVideo.load();
+            introVideo.play();
+            main.page2();
+        })
     }
     main.page2 = function () {
         $('.page1').hide();
@@ -50,16 +60,14 @@ $(function () {
             $('.page2').hide();
             main.page3();
         })
-        $(document).on('click', '#start-video-pic', function () {
-            $(this).hide();
-            introVideo.load();
-            introVideo.play();
-            setTimeout(function () {
-                $('#start-video-jump').fadeIn();
-            }, 2000)
-        })
-        // introVideo.load();
-        // introVideo.play();
+        // $(document).on('click', '#start-video-pic', function () {
+        //     $(this).hide();
+        //     introVideo.load();
+        //     introVideo.play();
+        //     setTimeout(function () {
+        //         $('#start-video-jump').fadeIn();
+        //     }, 2000)
+        // })
     }
     main.page3 = function () {
         $('.page3').show();

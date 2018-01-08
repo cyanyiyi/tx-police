@@ -11,5 +11,14 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-webserver": "^0.9.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyanyiyi/tx-police.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cyanyiyi/tx-police/issues"
+  },
+  "homepage": "https://github.com/cyanyiyi/tx-police#readme"
 }
