@@ -78,7 +78,7 @@ $(function () {
         main.initSwipper();
         $.each($('.video-full'), function(k, v){
             v.addEventListener("ended", function () {
-                $(v).parent().hide();
+                $(v).parents('.video-full-container').hide();
             })
         })
         $(document).on('click', '.video-pic', function () {
@@ -86,8 +86,8 @@ $(function () {
             $('.video-full-container').eq(index).show().find('.video-full')[0].play();
         })
         $(document).on('click', '.video-close', function () {
-            $(this).siblings('.video-full')[0].pause();
-            $(this).parent().hide();
+            $(this).siblings('.video-box').find('.video-full')[0].pause();
+            $(this).parents('.video-full-container').hide();
         })
         $(document).on('click', '.slide3-line-btn', function () {
             window.location.href = 'https://cloud.tencent.com/act/event/wx-video.html'

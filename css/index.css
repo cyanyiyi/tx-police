@@ -458,6 +458,16 @@ div {
 .video-full-container {
     background: #000;
 }
+.video-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
 .video-full {
     width: 100%;
     height: 100%;
