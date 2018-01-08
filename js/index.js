@@ -38,6 +38,7 @@ $(function () {
         $('.page2').show();
     }
     main.tryNow = function() {
+        $('.load-line').hide();
         $('.try-now').show();
         var introVideo = $('#start-video')[0];
         $(document).on('click', '.try-now', function(){
