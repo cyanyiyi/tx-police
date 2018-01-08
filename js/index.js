@@ -5,6 +5,7 @@ $(function () {
         if(document && document.getElementById && document.getElementsByTagName) {
             console.log('document');
         }
+        main.page1();
         main.loadLine();
     }
     main.initSwipper = function () {
@@ -21,12 +22,6 @@ $(function () {
         })
     }
     main.loadLine = function () {
-        $('.page1').css('opacity', 1).show();
-        $('.page2').show();
-        // window.addEventListener('touchstart', function(){
-        //     introVideo.load();
-        //     introVideo.play();
-        // }, false);
         var wid = 0;
         main.timer = setInterval(function () {
             if (wid >= 170) {
@@ -36,12 +31,10 @@ $(function () {
             $('.load-line-inner').width(wid);
             wid++
         }, 25)
-        // var introVideo = $('#start-video')[0];
-        // $(document).on('click', function(){
-        //     introVideo.load();
-        //     introVideo.play();
-        //     main.page2();
-        // })
+    }
+    main.page1 = function () {
+        $('.page1').css('opacity', 1).show();
+        $('.page2').show();
     }
     main.page2 = function () {
         $('.page1').hide();
