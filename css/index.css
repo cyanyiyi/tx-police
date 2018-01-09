@@ -626,7 +626,7 @@ div {
 .page3 .slide2 .video-wrapper {
     width: 98%;
     height: 4rem;
-    margin-bottom: 0 auto 15px;
+    margin: 0 auto 15px;
     position: relative;
 }
 
