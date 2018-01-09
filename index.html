@@ -60,7 +60,8 @@
     </div>
     <div class="page page2" style="display: none">
         <div class="video-box">
-            <video id="start-video" class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/trail2.mp4" type="video/mp4"></video>
+            <video id="start-video" class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/trail2.mp4"
+                type="video/mp4"></video>
         </div>
         <div id="start-video-jump" class="video-jump" style="display: none">跳过</div>
         <!-- <img id="start-video-pic" src="./img/intro-video-pic.jpg" alt="" class="w100 ab-c-w" style="z-index: 10"> -->
@@ -79,7 +80,17 @@
                         <div class="slide2-video-wrapper ab-c-w">
                             <div class="slide2-title"></div>
                             <div class="slide2-video-con">
-                                <div class="video-wrapper fl">
+                                <div class="video-wrapper">
+                                    <div class="video-box ab-c-w">
+                                        <img src="./img/video-pic1.jpg" alt="" class="video-pic w100">
+                                    </div>
+                                </div>
+                                <div class="video-wrapper">
+                                    <div class="video-box ab-c-w">
+                                        <img src="./img/video-pic2.jpg" alt="" class="video-pic w100">
+                                    </div>
+                                </div>
+                                <!-- <div class="video-wrapper fl">
                                     <div class="video-box ab-c-w">
                                         <img src="./img/slide2-video-pic1.jpg" alt="" class="video-pic w100">
                                     </div>
@@ -98,34 +109,38 @@
                                     <div class="video-box ab-c-w">
                                         <img src="./img/slide2-video-pic4.jpg" alt="" class="video-pic w100">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="arrow"></div>
                         <div class="page video-full-container">
                             <div class="video-box">
-                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test12.mp4" type="video/mp4"></video>
+                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test12.mp4"
+                                    type="video/mp4"></video>
                             </div>
                             <div class="video-close">关闭</div>
                         </div>
                         <div class="page video-full-container">
                             <div class="video-box">
-                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test22.mp4" type="video/mp4"></video>
+                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test22.mp4"
+                                    type="video/mp4"></video>
+                            </div>
+                            <div class="video-close">关闭</div>
+                        </div>
+                        <!-- <div class="page video-full-container">
+                            <div class="video-box">
+                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test33.mp4"
+                                    type="video/mp4"></video>
                             </div>
                             <div class="video-close">关闭</div>
                         </div>
                         <div class="page video-full-container">
                             <div class="video-box">
-                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test33.mp4" type="video/mp4"></video>
+                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test42.mp4"
+                                    type="video/mp4"></video>
                             </div>
                             <div class="video-close">关闭</div>
-                        </div>
-                        <div class="page video-full-container">
-                            <div class="video-box">
-                                <video class="video-full" preload="auto" playsinline webkit-playsinline x5-video-player-type="h5" src="http://7xj7xs.com1.z0.glb.clouddn.com/test42.mp4" type="video/mp4"></video>
-                            </div>
-                            <div class="video-close">关闭</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="swiper-slide slide3" style="display: block">
@@ -146,4 +161,49 @@
     // });
 </script>
 <script src="./js/index.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/TGMobileShare/TGMobileShare.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url: './jsConfig.php',
+            type: 'post',
+            data: {
+                url: location.href,
+            },
+            dataType: 'json',
+            success: function (r) {
+                jsApiStart(r);
+            }
+        });
+    });
+
+    function jsApiStart(obj) {
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: obj.appId, // 必填，公众号的唯一标识
+            timestamp: obj.timestamp, // 必填，生成签名的时间戳
+            nonceStr: obj.noncestr, // 必填，生成签名的随机串
+            signature: obj.signStr, // 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+
+        wx.ready(function () {
+            wx.onMenuShareAppMessage({
+                title: "你知道不用拨打110就能报警吗？",
+                desc: "报警新姿势get",
+                link: "http://h5.0rh.cn/110/",
+                imgUrl: 'http://7xj7xs.com1.z0.glb.clouddn.com/jc1.jpg'
+            });
+            wx.onMenuShareTimeline({
+                title: "你知道不用拨打110就能报警吗？",
+                desc: "报警新姿势get",
+                link: "http://h5.0rh.cn/110/",
+                imgUrl: 'http://7xj7xs.com1.z0.glb.clouddn.com/jc1.jpg'
+            });
+        });
+    }
+</script>
+
 </html>
