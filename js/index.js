@@ -31,7 +31,7 @@ $(function () {
             }
             $('.load-line-inner').width(wid);
             wid++
-        }, 20)
+        }, 16)
     }
     main.page1 = function () {
         $('.page1').css('opacity', 1).show();
